@@ -1,6 +1,6 @@
 # Projeto integrador
 <p>Desenvolvedor: Cristhian Gabriel</p>
-<h1>Projeto ""</h1>
+<h1>Projeto "Reserva ChromeBooks"</h1>
 
 <p>inserir imagem aqui</p>
 
