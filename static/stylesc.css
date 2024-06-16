@@ -1,0 +1,155 @@
+.meio {
+    position: relative;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+
+}
+
+.btao {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 25%;
+}
+
+.btao:hover {
+    transition: background-color 0.3s ease;
+    border: none;
+    background-color: rgb(18, 18, 160);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 25%;
+}
+
+.btao2 {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+    margin-left: 10px;
+    
+}
+
+.btao2:hover {
+    transition: background-color 0.3s ease;
+    border: none;
+    background-color: rgb(18, 18, 160);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+    margin-left: 10px;
+    
+}
+
+.btao3 {
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.btao3:hover {
+    transition: background-color 0.3s ease;
+    border: none;
+    background-color: rgb(18, 18, 160);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.foto {
+    position: relative;
+    height: 54px;
+    width: 10%;
+    margin-left: 35%;
+    float: right;
+}
+
+.container {
+    width: 100%;
+    height: 55px;
+    background-color: blue;
+    
+}
+
+.container2 {
+    width: 100%;
+    height: 50px;
+    border-style: groove;
+    border-radius: 1px;
+    display: flex;
+    position: relative;
+}
+
+.containerdomeio {
+    width: 100%;
+    height: 87%;
+    border-style: groove;
+    border-radius: 1px;
+    position: absolute;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    display: none; /* Inicialmente escondido */
+}
+
+#toggle {
+    display: none; /* Esconde o checkbox */
+}
+
+#toggle:checked + .btao3 + .box {
+    display: block; /* Exibe o quadrado quando o checkbox é marcado */
+}
+
+/* Definindo largura das colunas */
+.collumns {
+    width: 200px;
+    height: 200px;
+}
+
+.rows {
+    height: 200px;
+}
+
+.cell1 {
+    background-color: blue;
+}
+
+.cell2 {
+    background-color: crimson;
+}
+
+/*.body {
+    background-image: url("fundointegrador.png");
+    background-repeat: none;
+    background-size: cover; 
+}*/
