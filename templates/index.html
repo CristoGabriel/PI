@@ -13,6 +13,7 @@
         <a href="{{ url_for('login') }}", class="criar">Fazer login</a>
         <a href="{{ url_for('logout') }}", class="criar">Encerrar sessão</a>
         <a href="{{ url_for('agendar') }}", class="criar">Criar novo agendamento</a>
+        <img src="{{ imagem_url }}" class="foto">
         
     <div class="texto">Agendamentos</div>
     <div>
@@ -20,6 +21,7 @@
         <thead class="thead-default">
             <tr>
                 <th> ID </th>
+                <th> Data </th>
                 <th> Horário </th>
                 <th> Professor </th>
                 <th> Matéria </th>
@@ -30,6 +32,7 @@
             {% for agendamento in agendamentos %}
             <tr>
                 <td>{{ agendamento.id }}</td>
+                <td>{{ agendamento.data }}</td>
                 <td>{{ agendamento.horario }}</td>
                 <td>{{ agendamento.professor }}</td>
                 <td>{{ agendamento.materia }}</td>

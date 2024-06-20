@@ -19,7 +19,8 @@ class Usuario(db.Model):
     
 class Agendamento(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    horario = db.Column(db.String(5), nullable=False)
+    data = db.Column(db.String(10), nullable=False)
+    horario = db.Column(db.String(11), nullable=False)
     professor = db.Column(db.String(40), nullable=False)
     materia = db.Column(db.String(40), nullable=False)
     def __repr__(self):
@@ -81,10 +82,11 @@ def deletar(id):
 
 @app.route('/criar', methods=['POST',])
 def criar():
+    data = request.form['data']
     horario = request.form['horario']
     professor = request.form['professor']
     materia = request.form['materia']
-    if not horario or not professor or not materia:
+    if not data or not horario or not professor or not materia:
         flash('Por favor preencha todos os campos.')
         return redirect(url_for('agendar'))
     u = Agendamento.query.filter_by(horario=horario).first()
@@ -92,7 +94,7 @@ def criar():
         flash('Este horário não está disponível!')
         return redirect(url_for('agendar'))
     
-    novoagd = Agendamento(horario=horario, professor=professor, materia=materia)
+    novoagd = Agendamento(data=data, horario=horario, professor=professor, materia=materia)
     db.session.add(novoagd)
     db.session.commit()
     flash(' Agendamento feito!')

@@ -37,7 +37,8 @@ TABLES['Usuario'] = ('''
 TABLES['Agendamento'] = ('''
       CREATE TABLE `agendamento` (
       `id` int(11) NOT NULL AUTO_INCREMENT,
-      `horario` varchar(5) NOT NULL,
+      `data` varchar(10) NOT NULL,
+      `horario` varchar(11) NOT NULL,
       `professor` varchar(40) NOT NULL,
       `materia` varchar(40) NOT NULL,
       PRIMARY KEY (`id`) 
@@ -72,9 +73,9 @@ for usuario in cursor.fetchall():
     print(usuario[1])
 
 
-agendamentoSQL = 'INSERT INTO agendamento (horario, professor, materia) VALUES (%s, %s, %s)'
+agendamentoSQL = 'INSERT INTO agendamento (data, horario, professor, materia) VALUES (%s, %s, %s, %s)'
 agendamentos = [
-    ("12-30", "Cristhian", "Ingles"),
+    ("18/06/2024", "12:30/14:00", "Cristhian", "Ingles"),
 ]
 cursor.executemany(agendamentoSQL, agendamentos)
 cursor.execute('select * from chromebooks.agendamento')

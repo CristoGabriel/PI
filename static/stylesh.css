@@ -38,7 +38,7 @@
 
 .foto {
     position: relative;
-    height: 50px;
+    height: 54px;
     width: 10%;
     margin-left: 35%;
     float: right;
@@ -49,9 +49,3 @@
     background-repeat: none;
     background-size: cover; ;
 }*/
-
-.foto {
-    position: relative;
-    height: 100px;
-    width: 100px;
-}
