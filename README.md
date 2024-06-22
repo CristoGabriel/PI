@@ -9,19 +9,19 @@
 
 <h5>REQUISITOS FUNCIONAIS</h5>
 1. - Cadastro de Usuários<br>
-    O sistema deve permitir o cadastro de novos usuários, incluindo administradores, professores e alunos, com campos como nome, e-mail, senha e tipo de usuário.<br>
+    O sistema deve permitir o cadastro de novos usuários, com campos como nome e senha.<br>
 2. - Autenticação de Usuários<br>
-    O sistema deve permitir que os usuários façam login utilizando e-mail e senha, garantindo acesso seguro às funcionalidades de reserva.<br>
+    O sistema deve permitir que os usuários façam login utilizando login e senha, garantindo acesso seguro às funcionalidades de reserva.<br>
 3. - Visualização de Disponibilidade<br>
-    O sistema deve oferecer uma interface onde os usuários possam visualizar a disponibilidade dos ChromeBooks em um calendário interativo, indicando horários e datas livres.<br>
+    O sistema deve oferecer uma interface onde os usuários possam visualizar a disponibilidade dos ChromeBooks, exibindo os horários já ocupados.<br>
 4. - Reserva de ChromeBooks<br>
     O sistema deve permitir que os usuários façam reservas de ChromeBooks selecionando a data e o horário desejado, com verificação automática de disponibilidade para evitar conflitos.<br>
 5. - Confirmação e Notificações de Reserva<br>
-    O sistema deve enviar notificações por e-mail ou dentro do sistema para confirmar a reserva e lembrar os usuários sobre a data e hora da retirada e devolução dos dispositivos.<br>
+    O sistema deve enviar notificações por e-mail ou dentro do sistema para confirmar a reserva.<br>
 6. - Histórico de Reservas<br>
     O sistema deve manter um histórico das reservas feitas pelos usuários, permitindo que eles visualizem reservas passadas, atuais e futuras.<br>
 7. - Cancelamento de Reservas<br>
-    O sistema deve permitir que os usuários cancelem suas reservas com antecedência, atualizando a disponibilidade dos ChromeBooks em tempo real.<br>
+    O sistema deve permitir que os usuários cancelem suas reservas com antecedência.<br>
 8. - Gestão de Usuários<br>
     O sistema deve permitir que administradores visualizem, editem e removam perfis de usuários, assim como redefinam senhas e ajustem permissões conforme necessário.<br>
 
