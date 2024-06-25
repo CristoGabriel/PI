@@ -13,16 +13,6 @@
         <a href="about.html" class="btao2">Sobre</a>
         <img src="{{ imagem_url }}" class="foto">
     </div>
-    
-    <div class="meio">
-        <form method="POST" action="{{ url_for('autenticar') }}">
-            <input type="hidden" name="proxima" value="{{ proxima or url_for('index') }}">
-            <p><label>Nome de usuário:</label> <input class="form-control" type="text" name="usuario" required></p>
-            <p><label>Senha:</label> <input class="form-control" type="password" name="senha" required></p>
-            <p><button class="btao2" type="submit">Entrar</button></p>
-        </form> 
-    <a href="cadastro.html" class="btao2">Não tem uma conta? Cadastre-se</a>        
-    </div>
     {% with messages = get_flashed_messages() %}
                 {% if messages %} 
                     <ul id="messages" class="list-unstyled">
@@ -32,5 +22,15 @@
                     </ul>
                 {% endif %}
             {% endwith %}
+    <div class="meio">
+        <form method="POST" action="{{ url_for('autenticar') }}">
+            <input type="hidden" name="proxima" value="{{ proxima or url_for('index') }}">
+            <p><label>Nome de usuário:</label> <input class="form-control" type="text" name="usuario" required></p>
+            <p><label>Senha:</label> <input class="form-control" type="password" name="senha" required></p>
+            <p><button class="btao2" type="submit">Entrar</button></p>
+        </form> 
+        <a href="{{ url_for('pagcadastro') }}", class="btao2">Não tem um usuário? Crie um aqui!</a>       
+    </div>
+    
 </body>
 </html>

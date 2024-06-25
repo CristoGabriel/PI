@@ -29,8 +29,9 @@ TABLES = {}
 TABLES['Usuario'] = ('''
       CREATE TABLE `usuario` (
       `id` int(11) NOT NULL AUTO_INCREMENT,                     
-      `login` varchar(20) NOT NULL,
+      `nome` varchar(20) NOT NULL,
       `senha` varchar(20) NOT NULL,
+      `adm` varchar(3) NOT NULL,
       PRIMARY KEY (`id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;''')
 
@@ -38,10 +39,10 @@ TABLES['Agendamento'] = ('''
       CREATE TABLE `agendamento` (
       `id` int(11) NOT NULL AUTO_INCREMENT,
       `data` varchar(10) NOT NULL,
-      `horario` varchar(11) NOT NULL,
+      `periodo` varchar(10) NOT NULL,
       `professor` varchar(40) NOT NULL,
       `materia` varchar(40) NOT NULL,
-      PRIMARY KEY (`id`) 
+      PRIMARY KEY (`id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;''')
 
 #Criação das tabelas dentro da estrutura do banco de dados
@@ -59,12 +60,13 @@ for tabelaNome in TABLES:
             print('OK')
 
 # Inserção de Usuário
-usuarioSQL = 'INSERT INTO usuario (login, senha) VALUES (%s, %s)'
+usuarioSQL = 'INSERT INTO usuario (nome, senha, adm) VALUES (%s, %s, %s)'
 usuarios = [
-    ("123", "123"),
-    ("teste", "teste"),
-    ("adm", "adm"),
-    ("root", "root"),
+    ("adm", "adm", "sim"),
+    ("cristhian", "cristhian", "nao"),
+    ("yuri", "yuri", "nao"),
+    ("caio", "caio", "nao"),
+    ("renan", "renan", "nao"),
 ]
 cursor.executemany(usuarioSQL, usuarios)
 cursor.execute('select * from chromebooks.usuario')
@@ -73,9 +75,9 @@ for usuario in cursor.fetchall():
     print(usuario[1])
 
 
-agendamentoSQL = 'INSERT INTO agendamento (data, horario, professor, materia) VALUES (%s, %s, %s, %s)'
+agendamentoSQL = 'INSERT INTO agendamento (data, periodo, professor, materia) VALUES (%s, %s, %s, %s)'
 agendamentos = [
-    ("18/06/2024", "12:30/14:00", "Cristhian", "Ingles"),
+    ("18/06/2024", "matutino", "Cristhian", "Ingles"),
 ]
 cursor.executemany(agendamentoSQL, agendamentos)
 cursor.execute('select * from chromebooks.agendamento')
