@@ -18,8 +18,8 @@
     O sistema deve permitir que os usuários façam reservas de ChromeBooks selecionando a data e o horário desejado, com verificação automática de disponibilidade para evitar conflitos.<br>
 5. - Confirmação e Notificações de Reserva<br>
     O sistema deve enviar notificações por e-mail ou dentro do sistema para confirmar a reserva.<br>
-6. - Histórico de Reservas<br>
-    O sistema deve manter um histórico das reservas feitas pelos usuários, permitindo que eles visualizem reservas passadas, atuais e futuras.<br>
+6. - Validação ao excluir<br>
+    Deve existir um método de validação ao excluir agendamentos para que um usuário apenas possa excluir os agendamentos que ele tenha criado.<br>
 7. - Cancelamento de Reservas<br>
     O sistema deve permitir que os usuários cancelem suas reservas com antecedência.<br>
 8. - Gestão de Usuários<br>
@@ -28,8 +28,11 @@
 
 <h5>REQUISITOS NÃO FUNCIONAIS</h5>
 1 - Usabilidade;<br>
+    O sistema deve ser fácil de usar, oferecendo uma interface limpa e com boa localização dos botões.<br>
 2 - Compatibilidade;<br>
+    O sistema deve ser responsivo, sendo possível usa-lo em diferentes dispositivos sem gerar complicações.<br>
 3 - Manutenibilidade.<br>
+    O sistema deve ser fácil para fazer a manutenção, bem como a detecção de eventuais bugs.<br>
 
 <h5>TECNOLOGIAS USADAS</h5>
 <p>html,css,bootstrap e python.</p>
