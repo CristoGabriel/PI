@@ -9,7 +9,7 @@
 }
 
 .btao {
-    background-color: blue;
+    background-color: gray;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -23,7 +23,7 @@
 .btao:hover {
     transition: background-color 0.3s ease;
     border: none;
-    background-color: rgb(18, 18, 160);
+    background-color: darkgray;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -33,7 +33,7 @@
 }
 
 .btao2 {
-    background-color: blue;
+    background-color: gray;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -49,7 +49,7 @@
 .btao2:hover {
     transition: background-color 0.3s ease;
     border: none;
-    background-color: rgb(18, 18, 160);
+    background-color: darkgray;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -74,7 +74,7 @@
 .btao3:hover {
     transition: background-color 0.3s ease;
     border: none;
-    background-color: rgb(18, 18, 160);
+    background-color: darkgray;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -94,8 +94,8 @@
 .container {
     width: 100%;
     height: 55px;
-    background-color: blue;
-    
+    background-color: gray;
+    margin-bottom: -3px;
 }
 
 .container2 {

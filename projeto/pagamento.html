@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulário de Pagamento Pix</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h2>Formulário de pagamento Pix</h2>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="/action_page.php">
+     
+        <div class="row">
+          <div class="col-50">
+            <h3>Endereço</h3>
+            <label for="Nome"><i class="fa fa-user"></i> Nome</label>
+            <input type="text" id="Nome" name="Nome" placeholder="Nome completo">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="....@exemplo.com">
+            <label for="Endereço"><i class="fa fa-address-card-o"></i> Endereço</label>
+            <input type="text" id="Endereço" name="Endereço" placeholder="">
+            <label for="cidade"><i class="fa fa-institution"></i> Cidade</label>
+            <input type="text" id="cidade" name="cidade" placeholder="">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="Estado">Estado</label>
+                <input type="text" id="Estado" name="Estado" placeholder="NY">
+              </div>
+              <div class="col-50">
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" name="cep" placeholder="10001">
+              </div>
+            </div>
+          </div>
+         
+          <div class="col-50">
+            <h3>Pagamento Pix</h3>
+            <label for="chave_pix">Chave Pix</label>
+            <input type="text" id="chave_pix" name="chave_pix" placeholder="Chave Pix">
+            <label for="valor">Valor</label>
+            <input type="text" id="valor" name="valor" placeholder="R$">
+          </div>
+        </div>
+       
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Cobrança no Endereço cadastrado
+        </label>
+        <input type="submit" value="Finalize seu pagamento" class="btn">
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

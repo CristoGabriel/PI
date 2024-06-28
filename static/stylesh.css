@@ -1,5 +1,5 @@
 .criar {
-    background-color: blue;
+    background-color: gray;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -12,7 +12,7 @@
 
 .criar:hover {
     transition: background-color 0.3s ease;
-    background-color: rgb(18, 18, 160);
+    background-color: darkgray;
     border: none;
     padding: 15px 32px;
     text-align: center;
@@ -32,13 +32,13 @@
 .container {
     width: 100%;
     height: 60px;
-    background-color: blue;
+    background-color: gray;
     
 }
 
 .foto {
     position: relative;
-    height: 54px;
+    height: 50px;
     width: 10%;
     margin-left: 35%;
     float: right;
@@ -49,3 +49,30 @@
     background-repeat: none;
     background-size: cover; ;
 }*/
+
+.foto {
+    position: relative;
+    height: 100px;
+    width: 100px;
+}
+
+
+
+.image-link {
+    display: inline-block;
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none; /* Remove underline */
+}
+
+.image-link img {
+    width: 50px; /* Defina a largura desejada */
+    height: 50px; /* Defina a altura desejada */
+    border: none; /* Remove qualquer borda na imagem */
+}
+
+.card {
+    position: relative;
+    left: 200px;
+}

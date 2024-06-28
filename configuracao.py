@@ -8,7 +8,7 @@ SQLALCHEMY_DATABASE_URI = \
         usuario = 'root',
         senha = 'root',
         servidor = 'localhost',
-        database = 'chromebooks'
+        database = 'barberconnect'
     )
 
 UPLOAD_PATH = os.path.dirname(os.path.abspath(__file__)) + '/uploads'
