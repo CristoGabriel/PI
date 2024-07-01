@@ -6,6 +6,9 @@
     <title>Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesh.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <style>
+        
+    </style>
 
 </head>
 <body>
@@ -13,6 +16,7 @@
         <a href="{{ url_for('login') }}", class="criar">Fazer login</a>
         <a href="{{ url_for('logout') }}", class="criar">Encerrar sessão</a>
         <a href="{{ url_for('bar') }}", class="criar">Criar novo agendamento</a>
+        <a href="{{ url_for('pagcadastro') }}", class="criar">Cadastro</a>
         
     <div class="texto">Agendamentos</div>
     <div>
@@ -37,7 +41,9 @@
                 <td>{{ agendamento.dia }}</td>
                 <td>{{ agendamento.horario }}</td>
                 <td>R${{ agendamento.valor }}</td>
+                {% if session['usuarioLogado'] == 'adm'%}
                 <td> <a class="image-link" href="{{url_for('deletar', id=agendamento.id)}}"> <img src="{{ url_for('static', filename='imagens/image.png') }}" alt="Botão"> </a> </td>
+                {% endif %}
             </tr>
             {% endfor %}
         </tbody>
@@ -72,6 +78,16 @@
                 })();
             </script>
     </div>
+    <div class="pe">
+        <p class="textowhites"> 2024 Exemplo Company. Todos os direitos reservados.</p> 
+<a href="/politica-de-privacidade" class="textowhite">Política de Privacidade</a> 
+<a href="/termos-de-usoclass" class="textowhite"> Termos de Uso</a> 
+<a href="/contato"class="textowhite">Contato</a>  
+<a href="/suporte"class="textowhite">Suporte</a>  
+<a href="https://facebook.com/exemplo" class="textowhite" target="_blank" rel="noopener">Facebook</a> 
+<a href="https://twitter.com/exemplo" class="textowhite" target="_blank" rel="noopener">Twitter</a>
+    </div>
 </div>
+
 </body>
 </html>

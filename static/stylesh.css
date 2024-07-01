@@ -31,7 +31,7 @@
 
 .container {
     width: 100%;
-    height: 60px;
+    height: 56px;
     background-color: gray;
     
 }
@@ -75,4 +75,32 @@
 .card {
     position: relative;
     left: 200px;
+}
+
+.pe {
+    color: white;
+    display: flex;
+    margin-top: 100px;
+    background-color: grey;
+    width: 100%;
+    height: 100px;
+}
+
+.textowhite {
+    color: white;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+
+.textowhite:hover {
+    transition: color 0.3s ease;
+    color: blue;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+
+.textowhites {
+    color: white;
+    padding: 10px 10px;
+    text-decoration: none;
 }
