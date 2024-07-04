@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios do sistema</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesh.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+
+</head>
+<body>
+    <div class="container">    
+        <a href="{{ url_for('index') }}", class="criar">Voltar</a>
+        
+    <div class="texto">Dados de uso do sistema</div>
+    
+    <div>
+        <p><label>Agendamentos criados:</label> <input class="form-controle" type="text" name="agendamentos" value="{{ relatorio }}" readonly></p>
+        {% if profmaisusado %}
+        <p><label>Usuário que mais criou agendamentos:</label> <input class="form-controle" type="text" name="usu" value="{{ profmaisusado.professor }}" readonly></p>
+        {% endif %}
+        {% if ma %}
+        <p><label>Matéria que mais criou agendamentos:</label> <input class="form-controle" type="text" name="mat" value="{{ ma.materia }}" readonly></p>
+        {% endif %}
+    
+            <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>
+            <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+            <script>
+                // JavaScript para ativar a validação Bootstrap
+                (function() {
+                    'use strict';
+                    window.addEventListener('load', function() {
+                        var forms = document.getElementsByTagName('form');
+                        var validation = Array.prototype.filter.call(forms, function(form) {
+                            form.addEventListener('submit', function(event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                            }, false);
+                        });
+                    }, false);
+                })();
+            </script>
+    </div>
+    {% with messages = get_flashed_messages() %}
+                {% if messages %} 
+                    <ul id="messages" class="list-unstyled">
+                    {% for message in messages %}
+                        <li class="alert alert-success">{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+</div>
+</body>
+</html>

@@ -14,25 +14,6 @@
       <a href="about.html" class="btao2">Sobre</a>
       <img src="{{ imagem_url }}" class="foto">
     </div>
-    <div class="meio">
-        <form action="{{ url_for('criar') }}" method="post" enctype="multipart/form-data"> 
-            <fieldset>
-              <div class="form-group">
-                <label for="horario">Informe um horario(formato:**-**)</label>
-                <input type="text" id="horario" name="horario" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="professor">Nome do(a) professor(a) </label>
-                <input type="text" id="professor" name="professor" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="materia">Informe a materia deste professor</label>
-                <input type="text" id="materia" name="materia" class="form-control">
-              </div>
-              <button type="submit" class="btao2">Salvar</button>
-            </fieldset>
-          </form>       
-    </div>
     {% with messages = get_flashed_messages() %}
                 {% if messages %} 
                     <ul id="messages" class="list-unstyled">
@@ -42,5 +23,47 @@
                     </ul>
                 {% endif %}
             {% endwith %}
+    <div class="meio">
+        <form action="{{ url_for('criar') }}" method="post" enctype="multipart/form-data"> 
+            <fieldset>
+              <div class="form-group">
+                <label for="horario">Informe a data do agendamento</label>
+                <input type="date" id="data" name="data" value="{{ data }}" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="periodo">Selecione um período</label>
+                <div class="controls">
+                  <select id="periodo" name="periodo" class="input-xlarge">
+                    <option>MATUTINO</option>
+                    <option>VESPERTINO</option>
+                    <option>NOTURNO</option>
+                    </option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="control-label" for="materia">Selecione a materia deste professor</label>
+                <div class="controls">
+                  <select id="materia" name="materia" class="input-xlarge">
+                    <option>INGLÊS</option>
+                    <option>PORTUGUÊS</option>
+                    <option>MATEMÁTICA</option>
+                    <option>HISTÓRIA</option>
+                    <option>GEOGRAFIA</option>
+                    <option>BIOLOGIA</option>
+                    <option>QUÍMICA</option>
+                    <option>ESPANHOL</option>
+                    <option>FÍSICA</option>
+                    <option>ED.FÍSICA</option>
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <button type="submit" class="btao2">Salvar</button>
+            </fieldset>
+          </form>       
+    </div>
+    
 </body>
 </html>

@@ -19,9 +19,9 @@ except mysql.connector.Error as err:
 
 #Criação da estrutura do banco de dados
 cursor = conn.cursor()
-cursor.execute("DROP DATABASE IF EXISTS `barberconnect`;")
-cursor.execute("CREATE DATABASE `barberconnect`;")
-cursor.execute("USE `barberconnect`;")
+cursor.execute("DROP DATABASE IF EXISTS `CHROMEBOOKS`;")
+cursor.execute("CREATE DATABASE `CHROMEBOOKS`;")
+cursor.execute("USE `CHROMEBOOKS`;")
 
 #Criar as tabelas
 TABLES = {}
@@ -29,20 +29,20 @@ TABLES = {}
 TABLES['Usuario'] = ('''
       CREATE TABLE `usuario` (
       `id` int(11) NOT NULL AUTO_INCREMENT,                     
-      `login` varchar(20) NOT NULL,
+      `nome` varchar(20) NOT NULL,
       `senha` varchar(20) NOT NULL,
+      `adm` varchar(3),
       PRIMARY KEY (`id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;''')
 
 TABLES['Agendamento'] = ('''
       CREATE TABLE `agendamento` (
       `id` int(11) NOT NULL AUTO_INCREMENT,
-      `cliente` VARCHAR(255) NOT NULL,
-      `servicos` VARCHAR(255) NOT NULL,
-      `dia` VARCHAR(255) NOT NULL,
-      `horario` VARCHAR(255) NOT NULL,
-      `valor` VARCHAR(255) NOT NULL,
-      PRIMARY KEY (`id`) 
+      `data` varchar(10) NOT NULL,
+      `periodo` varchar(10) NOT NULL,
+      `professor` varchar(40) NOT NULL,
+      `materia` varchar(40) NOT NULL,
+      PRIMARY KEY (`id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;''')
 
 #Criação das tabelas dentro da estrutura do banco de dados
@@ -60,26 +60,27 @@ for tabelaNome in TABLES:
             print('OK')
 
 # Inserção de Usuário
-usuarioSQL = 'INSERT INTO usuario (login, senha) VALUES (%s, %s)'
+usuarioSQL = 'INSERT INTO usuario (nome, senha, adm) VALUES (%s, %s, %s)'
 usuarios = [
-    ("123", "123"),
-    ("teste", "teste"),
-    ("adm", "adm"),
-    ("root", "root"),
+    ("adm", "adm", "sim"),
+    ("cristhian", "cristhian", "nao"),
+    ("yuri", "yuri", "nao"),
+    ("caio", "caio", "nao"),
+    ("renan", "renan", "nao"),
 ]
 cursor.executemany(usuarioSQL, usuarios)
-cursor.execute('select * from barberconnect.usuario')
+cursor.execute('select * from chromebooks.usuario')
 print(' -------------  Usuários:  -------------')
 for usuario in cursor.fetchall():
     print(usuario[1])
 
 
-agendamentoSQL = 'INSERT INTO agendamento (cliente, servicos, dia, horario, valor) VALUES (%s, %s, %s, %s, %s)'
+agendamentoSQL = 'INSERT INTO agendamento (data, periodo, professor, materia) VALUES (%s, %s, %s, %s)'
 agendamentos = [
-    ("Caio", "corte", "2024-06-10", "14:17", "20"),
+    ("2024-06-18", "MATUTINO", "cristhian", "INGLÊS"),
 ]
 cursor.executemany(agendamentoSQL, agendamentos)
-cursor.execute('select * from barberconnect.agendamento')
+cursor.execute('select * from chromebooks.agendamento')
 print(' -------------  Agendamentos:  -------------')
 for agendamento in cursor.fetchall():
     print(agendamento[1])
