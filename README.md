@@ -2,7 +2,7 @@
 <p>Desenvolvedor: Cristhian Gabriel</p>
 <h1>Projeto "AgendaLab"</h1>
 
-<p>inserir imagem aqui</p>
+<p>IMPORTANTE: Os arquivos do projeto AgendaLab estão na branch "master", as branches "caio" e "lu" apenas existem pois me pediram para guardar os projetos deles aqui também.</p>
 
 <h5>SOBRE O PROJETO</h5>
 <p>Bem-vindo ao Sistema AgendaLab, uma solução inovadora e intuitiva desenvolvida para simplificar e otimizar a gestão de reservas dos laboratórios de informática nas escolas. Este sistema visa proporcionar uma experiência eficiente e sem complicações para professores, alunos e administradores.</p>
