@@ -31,7 +31,7 @@ TABLES['Usuario'] = ('''
       `id` int(11) NOT NULL AUTO_INCREMENT,                     
       `nome` varchar(20) NOT NULL,
       `senha` varchar(20) NOT NULL,
-      `adm` varchar(3),
+      `adm` varchar(3) DEFAULT 'nao' NOT NULL,
       PRIMARY KEY (`id`)
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;''')
 
