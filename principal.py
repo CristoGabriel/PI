@@ -15,7 +15,7 @@ class Usuario(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     nome = db.Column(db.String(20), nullable=False)
     senha = db.Column(db.String(20), nullable=False)
-    adm = db.Column(db.String(3), nullable=True)
+    adm = db.Column(db.String(3), default='nao')
     def __repr__(self):
         return '<Name %r>' % self.name
     
@@ -107,6 +107,13 @@ def deletar(id, professor):
     flash('Agendamento Cancelado!')
     return redirect(url_for('index'))
 
+@app.route('/excluir/<int:id>')
+def excluir(id):
+    Usuario.query.filter_by(id=id).delete()
+    db.session.commit()
+    flash('Usuário excluido!')
+    return redirect(url_for('admpagina'))
+
 @app.route('/criar', methods=['POST',])
 def criar():
     data = request.form.get('data')
@@ -145,7 +152,7 @@ def cadastro():
     db.session.add(novouser)
     db.session.commit()
     flash('Usuário cadastrado!')
-    return redirect(url_for('login'))
+    return redirect(url_for('index'))
 
 @app.route('/pagcadastro')
 def pagcadastro():
