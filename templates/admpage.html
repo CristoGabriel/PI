@@ -24,6 +24,7 @@
                 <th> Senha </th>
                 <th> Adm </th>
                 <th>  </th>
+                <th>  </th>
             </tr>
         </thead>
         <tbody>
@@ -34,6 +35,7 @@
                 <td>{{ usuario.senha }}</td>
                 <td>{{ usuario.adm }}</td>
                 <td> <a class="criar "href="{{url_for('setadm', adm=usuario.adm, id=usuario.id)}}"> Trocar tipo</a> </td>
+                <td> <a class="criar " style="background-color: indianred;" href="{{url_for('excluir', id=usuario.id)}}"> Excluir</a> </td>
             </tr>
             {% endfor %}
         </tbody>
